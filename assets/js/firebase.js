@@ -28,7 +28,7 @@ class Firebase {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        alert("tao thanh cong");
+        alert("Đăng kí thành công");
         window.location.href = "./signin.html"
         // ...
       })
@@ -45,10 +45,10 @@ class Firebase {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        alert("dang nhap thanh cong")
-        const { email, uid, accessToken } = user
+        alert("Đăng nhập thành công");
+        const { email, uid, accessToken } = user;
         localStorage.setItem('user', JSON.stringify({ email, uid, accessToken }))
-        window.location.href = "./home.html"
+        window.location.href = "../index.html"
       })
       .catch((error) => {
         const errorCode = error.code;
