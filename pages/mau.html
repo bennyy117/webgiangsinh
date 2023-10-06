@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mau1</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+
+        body {
+            margin: 0;
+            text-align: center;
+        }
+
+        /* navbar */
+        section.section1 {
+            width: 100%;
+            height: 100vh;
+            box-sizing: border-box;
+            background: url(https://res.cloudinary.com/dn4nxz7f0/image/upload/v1603170394/navigation_trong_suot/pexels-life-of-pix-7919_zydtt2.jpg);
+            background-size: cover;
+        }
+
+        nav {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(18, 128, 32, 0.314);
+            padding: 0 100px;
+            box-sizing: border-box;
+            box-shadow: 0 1px 1px rgba(214, 38, 38, 0.12),
+                0 2px 2px rgba(38, 214, 62, 0.12),
+                0 4px 4px rgba(38, 214, 62, 0.12),
+                0 8px 8px rgba(38, 214, 62, 0.12),
+                0 16px 16px rgba(38, 214, 62, 0.12);
+        }
+
+        nav .brand {
+            float: left;
+            height: 100%;
+            line-height: 80px;
+        }
+
+        nav .brand h2 {
+            margin: 0;
+            padding: 0;
+            color: green;
+        }
+
+
+        nav ul {
+            float: right;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            list-style: none;
+        }
+
+        nav ul li a {
+            position: relative;
+            display: block;
+            height: 80px;
+            line-height: 80px;
+            padding: 0 20px;
+            box-sizing: border-box;
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s
+        }
+
+        nav ul li a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            transform-origin: right;
+            z-index: -1;
+            transform: scaleX(0);
+            transition: transform 0.5s;
+        }
+
+        nav ul li a:hover:before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        nav ul li a:hover {
+            color: #262626;
+        }
+
+        section.section2 {
+            padding: 150px;
+        }
+
+        /* chân trang */
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+        * {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .footer-distributed {
+            background: #666;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+            box-sizing: border-box;
+            width: 100%;
+            text-align: left;
+            font: bold 16px sans-serif;
+            padding: 55px 50px;
+        }
+
+        .footer-distributed .footer-left,
+        .footer-distributed .footer-center,
+        .footer-distributed .footer-right {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        /* Footer left */
+
+        .footer-distributed .footer-left {
+            width: 40%;
+        }
+
+        /* The company logo */
+
+        .footer-distributed h3 {
+            color: #ffffff;
+            font: normal 36px 'Josefin Sans', sans-serif;
+            margin: 0;
+        }
+
+        .footer-distributed h3 span {
+            color: rgb(87, 157, 203);
+        }
+
+        /* Footer links */
+
+        .footer-distributed .footer-links {
+            color: #ffffff;
+            margin: 20px 0 12px;
+            padding: 0;
+        }
+
+        .footer-distributed .footer-links a {
+            display: inline-block;
+            line-height: 1.8;
+            font-weight: 400;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .footer-distributed .footer-company-name {
+            color: #222;
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        /* Footer Center */
+
+        .footer-distributed .footer-center {
+            width: 35%;
+        }
+
+        .footer-distributed .footer-center i {
+            background-color: #33383b;
+            color: #ffffff;
+            font-size: 25px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 42px;
+            margin: 10px 15px;
+            vertical-align: middle;
+        }
+
+        .footer-distributed .footer-center i.fa-envelope {
+            font-size: 17px;
+            line-height: 38px;
+        }
+
+        .footer-distributed .footer-center p {
+            display: inline-block;
+            color: #ffffff;
+            font-weight: 400;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        .footer-distributed .footer-center p span {
+            display: block;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .footer-distributed .footer-center p a {
+            color: rgb(87, 157, 203);
+            text-decoration: none;
+            ;
+        }
+
+        .footer-distributed .footer-links a:before {
+            content: "|";
+            font-weight: 300;
+            font-size: 20px;
+            left: 0;
+            color: #fff;
+            display: inline-block;
+            padding-right: 5px;
+        }
+
+        .footer-distributed .footer-links .link-1:before {
+            content: none;
+        }
+
+        /* Footer Right */
+
+        .footer-distributed .footer-right {
+            width: 20%;
+        }
+
+        .footer-distributed .footer-company-about {
+            line-height: 20px;
+            color: #92999f;
+            font-size: 13px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .footer-distributed .footer-company-about span {
+            display: block;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer-distributed .footer-icons {
+            margin-top: 25px;
+        }
+
+        .footer-distributed .footer-icons a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            background-color: #33383b;
+            border-radius: 2px;
+
+            font-size: 20px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 35px;
+
+            margin-right: 3px;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 880px) {
+
+            .footer-distributed {
+                font: bold 14px sans-serif;
+            }
+
+            .footer-distributed .footer-left,
+            .footer-distributed .footer-center,
+            .footer-distributed .footer-right {
+                display: block;
+                width: 100%;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+
+            .footer-distributed .footer-center i {
+                margin-left: 0;
+            }
+        }
+
+        .fticon-a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* nút lên top */
+        #imgnutlentop {
+            width: 20px;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: rgb(255, 255, 255);
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+        }
+
+        #myBtn:hover {
+            background-color: rgb(255, 255, 255);
+        }
+
+
+        .imgmau1 {
+            width: 800px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav>
+        <div class="brand">
+            <h2>Christmas</h2>
+        </div>
+        <ul>
+            <li><a href=""><i class="fa fa-home" aria-hidden="true"></i> Trang Chủ</a></li>
+            <li><a href="./signup.html"><i class="fa fa-truck" aria-hidden="true"></i> Đăng Kí</a></li>
+            <li><a href="./login.html"><i class="fa fa-telegram" aria-hidden="true"></i> Đăng Nhập</a></li>
+            <li><a href="./cart.html"><i class="fa fa-telegram" aria-hidden="true"></i> Giỏ Hàng</a></li>
+            <li><a href="javascript:window.scrollTo(maxWidth,maxHeight)"><i class="fa fa-location-arrow" id="nutlienhe"
+                        aria-hidden="true"></i> Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <!-- thân trang -->
+    <div>
+        <img class="imgmau1" src="https://natrachem.vn/wp-content/uploads/2020/03/tuyet-nhan-tao-3-1024x718.png"
+            alt="mẫu 1" />
+        <p class="text1">Tuyết nhân tạo</p><br>
+        <h2>THÔNG TIN SẢN PHẨM</h2>
+        <p>Chất liệu: Natri polyacrylate <br>Màu sắc: Trắng <br>Khuyến cáo: Không được ăn<br>Quà tặng: voucher trị giá
+            10.000VND<br><b>Giá: 30.000VND</b></p><br>
+        <h3>Hãy liên hệ chúng tôi để mua ngay!</h3>
+    </div>
+    <!-- chân trang -->
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <h3>Christ<span>mas</span></h3>
+            <p class="footer-links">
+                <a href="#" class="link-1">Trang chủ</a>
+            </p>
+            <p class="footer-company-name">by loan © 2022</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>123 Nguyễn Trãi</span> Thanh Xuân, Hà Nội</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+84 91234567</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:naryloan@gmail.com">naryloan@gmail.com</a></p>
+            </div>
+
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Lời cảm ơn</span>Chúng tôi luôn muốn mang đến cho khách hàng trải nghiệm tuyệt vời nhất! Hãy đừng
+                ngần ngại mà gọi ngay để nhận tư vấn miễn phí nhé!
+            </p>
+
+            <div class="footer-icons">
+                <a class="fticon-a" href="https://www.facebook.com/"><b class="fa fa-facebook">F</b></a>
+                <a class="fticon-a" href="https://www.instagram.com/"><b class="fa fa-instagram">I</b></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- nút lên top -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><img id="imgnutlentop"
+            src="https://cafebiz.cafebizcdn.vn/2018/3/24/photo-11-152186495814020029287.png" /></button>
+
+
+    <script>
+        var mybutton = document.getElementById("myBtn");
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <!-- nút contact -->
+    <script>
+        document.getElementById('submit').addEventListener('mouseout', function heightFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+
+    <!-- nút contact -->
+    <script type='text/javascript'>
+        var maxWidth = (document.body.clientWidth);
+        var maxHeight = (document.body.clientHeight);
+    </script>
+
+</body>
+
+</html>

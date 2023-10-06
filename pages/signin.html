@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            text-align: center;
+            background-color: rosybrown;
+            background-image: url(https://toigingiuvedep.vn/wp-content/uploads/2021/02/hinh-anh-tuyet-roi-va-khu-rung-bang-tuyet-phu-trang.gif;);
+            background-size: 100%;
+            font-family: 'Lato', sans-serif;
+            color: white;
+            
+            /* background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.3), 
+          rgba(0, 0, 0, 0.3)
+        ),
+        url(https://toigingiuvedep.vn/wp-content/uploads/2021/02/hinh-anh-tuyet-roi-va-khu-rung-bang-tuyet-phu-trang.gif;); */
+        }
+
+        h2 {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        form {
+            width: 500px;
+            margin: auto;
+        }
+        
+        .h2form {
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.355);
+        }
+
+        .line {
+            margin: 10px auto 30px auto;
+            height: 3px;
+            border: 0;
+            background: #ab80a4;
+            width: 250px;
+        }
+
+        input[type=email],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
+        button {
+            background-color: #ab80a4;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-family: 'Lato', sans-serif;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbtn {
+            display: block;
+            float:left;
+            width: auto;
+            padding: 10px 18px;
+            background-color: #ab80a4;
+        }
+
+        .cancelbtn>a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        .container1 {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        .apsw {
+            text-decoration: none;
+            color:#ab80a4;
+        }
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="h2form">
+        <h2>Đăng nhập</h2>
+        <div class="line"></div>
+        <form method="post">
+
+            <div class="container">
+                <label for="uname"><b>Tên đăng nhập</b></label>
+                <input type="email" placeholder="Nhập Email" name="uname" id="email" required>
+
+                <label for="psw"><b>Mật khẩu</b></label>
+                <input type="password" placeholder="Nhập Mật khẩu" name="psw" id="password" required>
+
+                <button type="submit" id="btn-signin">Đăng nhập</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Nhớ thông tin của tôi
+                </label>
+            </div>
+
+            <div class="container1">
+                <button type="button" class="cancelbtn">
+                    <a href="signup.html">Đăng kí</a>
+                </button>
+                <span class="psw">Quên <a class="apsw" href="#">mật khẩu?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <script type="module">
+        import Firebase from "../assets/js/firebase.js"
+        let btn_signin = document.querySelector('#btn-signin');
+
+        btn_signin.addEventListener("click", (e) => {
+            e.preventDefault();
+            let email = document.querySelector('input[type="email"]').value;
+            let password = document.querySelector('input[type="password"]').value;
+
+            let fb = new Firebase();
+
+            fb.signin(email, password);
+        })
+    </script>
+</body>
+
+</html>

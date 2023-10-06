@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WI</title>
+    <link rel="stylesheet" href="./assets/css/wi.css">
+</head>
+
+<body>
+    <script type="text/javascript" src="https://nhanh.vn/js/events/snow2.js"></script>
+    <script src="./assets/js/firebase.js"></script>
+    <!-- navbar -->
+    <nav>
+        <div class="brand">
+            <h2>Christmas</h2>
+        </div>
+        <ul>
+            <li><a href=""><i class="fa fa-home" aria-hidden="true"></i> Trang Chủ</a></li>
+            <li id="sign-up"><a href="./signup.html"><i class="fa fa-truck" aria-hidden="true"></i> Đăng Kí</a></li>
+            <li id="sign-in"><a href="./signin.html"><i class="fa fa-telegram" aria-hidden="true"></i> Đăng Nhập</a></li>
+            <li id="sign-out"><a><i class="fa fa-truck" aria-hidden="true"></i> Đăng Xuất</a></li>
+            <li><a href="./cart.html"><i class="fa fa-telegram" aria-hidden="true"></i> Giỏ Hàng</a></li>
+            <li><a href="javascript:window.scrollTo(maxWidth,maxHeight)"><i class="fa fa-location-arrow" id="nutlienhe"
+                        aria-hidden="true"></i> Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <!-- đầu trang -->
+
+    <div class="header">
+
+        <!--Content before waves-->
+        <div class="inner-header flex">
+            <h1 class="companyname">Christmas</h1>
+        </div>
+
+        <!--Waves Container-->
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+        <!--Waves end-->
+
+    </div>
+    <!--Header ends-->
+
+    <!--Content starts-->
+    <div class="content flex">
+        <p>Chúc bạn có một mùa Giáng sinh vui vẻ. </p>
+    </div>
+    <!--Content ends-->
+
+
+    <!-- phần thân -->
+    <div class="app">
+        <div class="search-container">
+            <input id="inp_name" class="inputtengia" type="text" placeholder="Tên sản phẩm" name="search" />
+            <input id="inp_price" class="inputtengia" type="number" placeholder="Giá" name="price" />
+            <input type="file" id="test-file" class="inputfile" />
+            <label for="test-file">Chọn hình ảnh</label>
+            <button id="add_btn" type="button">Thêm</button>
+        </div>
+        <ul class="list-todo"></ul>
+        <ul class="list-cart"></ul>
+    </div>
+
+    <br><br><br><br><br>
+    <!-- chân trang -->
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <h3>Christ<span>mas</span></h3>
+            <p class="footer-links">
+                <a href="#" class="link-1">Trang chủ</a>
+            </p>
+            <p class="footer-company-name">by loan © 2022</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>123 Nguyễn Trãi</span> Thanh Xuân, Hà Nội</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+84 91234567</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:naryloan@gmail.com">naryloan@gmail.com</a></p>
+            </div>
+
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Lời cảm ơn</span>Chúng tôi luôn muốn mang đến cho khách hàng trải nghiệm tuyệt vời nhất! Hãy đừng
+                ngần ngại mà gọi ngay để nhận tư vấn miễn phí nhé!
+            </p>
+
+            <div class="footer-icons">
+                <a class="fticon-a" href="https://www.facebook.com/"><b class="fa fa-facebook">F</b></a>
+                <a class="fticon-a" href="https://www.instagram.com/"><b class="fa fa-instagram">I</b></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- nút lên top -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><img id="imgnutlentop"
+            src="https://cafebiz.cafebizcdn.vn/2018/3/24/photo-11-152186495814020029287.png" /></button>
+
+
+    <script>
+        var mybutton = document.getElementById("myBtn");
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+
+    <!-- nút contact -->
+    <script type='text/javascript'>
+        var maxWidth = (document.body.clientWidth);
+        var maxHeight = (document.body.clientHeight);
+    </script>
+
+<script defer type="module">
+    import Firebase from "./assets/js/firebase.js"
+    // const up = document.querySelector("#inp_file")
+
+    const si = document.querySelector('#sign-in')
+    const su = document.querySelector('#sign-up')
+    const so = document.querySelector('#sign-out')
+    const user = JSON.parse(localStorage.getItem("user"))
+    if (user) {
+        si.style.display = "none"
+        su.style.display = "none"
+        so.style.display = "block"
+    } else {
+        si.style.display = "block"
+        su.style.display = "block"
+        so.style.display = "none"
+    }
+    so.addEventListener("click", (e) => {
+        e.preventDefault()
+        localStorage.removeItem("user")
+        window.location.reload()
+    })
+    const fb = new Firebase();
+
+    async function renderUI() {
+        try {
+            const ul = document.querySelector('.list-todo')
+            const data = await fb.readTodos();
+
+            ul.innerHTML = ""
+            data.forEach(todo => {
+                const li = document.createElement('li')
+                li.setAttribute("class", "todo-item")
+
+                const content = `
+                        <figure class="snip0016">
+                            <img id="imgoadd" src="${todo.uploadURL}" alt="" />
+                            <figcaption>
+                                <h2 class="todo">Tên sản phẩm: ${todo.name}</h2><br><br>
+                                <h2 class="todo">Giá: ${todo.price}</h2><br><br>
+                                
+                                <a href="./mau.html"></a>
+                            </figcaption>
+                        </figure>
+                        <button type="button" id="${todo.id}" class="btn btn-cart" >Thêm Vào Giỏ</button>
+
+                        <div class="action">
+                            <i class="fa-solid fa-pen-to-square" id="${todo.id}"></i>
+                            <i class="fa-solid fa-trash" id="${todo.id}"></i>
+                        </div>
+                    `
+
+                li.innerHTML += content
+                ul.append(li)
+
+            })
+            handleEvent()
+            handleAddToCart()
+        } catch (error) {
+            console.log(error)
+        }
+    };
+
+
+    document.querySelector('#add_btn')
+        .addEventListener("click", async e => {
+            try {
+                let name = document.querySelector('#inp_name').value;
+                let price = document.querySelector('#inp_price').value;
+                let inputFile = document.querySelector("#test-file");
+                let uploadURL = await fb.uploadFile(inputFile.files[0]);
+                await fb.addTodo(name, price, uploadURL)
+                renderUI()
+
+            } catch (error) {
+                console.log(error)
+            }
+        })
+
+
+    const handleEvent = () => {
+        const listIconDelete = document.querySelectorAll(".action>i.fa-trash");
+        listIconDelete.forEach((node) => {
+            node.addEventListener("click", (e) => {
+                let id = node.getAttribute("id");
+                let todo = node.parentNode.parentNode.querySelector(".todo").textContent;
+                fb.deleteTodo(id, todo);
+
+            })
+        })
+    }
+    async function addToCart(btn) {
+        console.log(btn)
+        const PId = btn.id;
+        const UId = JSON.parse(localStorage.getItem("user")).uid;
+        await fb.addToCart(PId, 1, UId)
+        renderUI()
+    }
+    function handleAddToCart() {
+        const btnS = document.querySelectorAll(".btn-cart")
+        
+        btnS.forEach((btn) => {
+            btn.addEventListener("click", () => addToCart(btn))
+        })
+        
+    }
+    renderUI()
+    
+</script>
+
+
+
+</body>
+</html>

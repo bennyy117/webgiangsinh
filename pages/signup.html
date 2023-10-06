@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    text-align: center;
+    background-color: rosybrown;
+    background-image: url(https://toigingiuvedep.vn/wp-content/uploads/2021/02/hinh-anh-tuyet-roi-va-khu-rung-bang-tuyet-phu-trang.gif;);
+    background-size: 100%;
+    font-family: 'Lato', sans-serif;
+    color: white;
+  }
+
+  * {
+    box-sizing: border-box
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  form {
+    width: 500px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.355);
+  }
+
+  /* Full-width input fields */
+  input[type=text],
+  input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    font-family: 'Lato', sans-serif;
+  }
+
+  input[type=text]:focus,
+  input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+    font-family: 'Lato', sans-serif;
+  }
+
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+  /* Set a style for all buttons */
+  button {
+    background-color: #ab80a4;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  button:hover {
+    opacity: 1;
+  }
+
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    padding: 14px 20px;
+    background-color: #ab80a4;
+  }
+
+  .cancelbtn>a {
+    text-decoration: none;
+    color: white;
+  }
+
+  /* Float cancel and signup buttons and add an equal width */
+  .cancelbtn,
+  .signupbtn {
+    float: left;
+    width: 50%;
+    font-family: 'Lato', sans-serif;
+  }
+
+  /* Add padding to container elements */
+  .container {
+    padding: 16px;
+  }
+
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    font-family: 'Lato', sans-serif;
+  }
+
+  /* Change styles for cancel button and signup button on extra small screens */
+  @media screen and (max-width: 300px) {
+
+    .cancelbtn,
+    .signupbtn {
+      width: 100%;
+    }
+  }
+</style>
+
+<body>
+
+  <form>
+    <div class="container">
+      <h1>Đăng kí</h1>
+      <p>Hãy điền theo form dưới đây để tạo tài khoản.</p>
+      <hr>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Nhập Email" name="email" id="email" required>
+
+      <label for="psw"><b>Mật khẩu</b></label>
+      <input type="password" placeholder="Nhập Mật khẩu" name="psw" id="password" required>
+
+      <label for="psw-repeat"><b>Nhập lại Mật khẩu</b></label>
+      <input type="password" placeholder="Nhập Mật khẩu" name="psw-repeat" id="password" required>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Nhớ thông tin của tôi
+      </label>
+
+      <p>Tạo tài khoản có nghĩa bạn đã đồng ý với <a href="#" style="color:#ab80a4">Điều khoản và Chính sách</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">
+          <a href="signin.html">Đăng nhập</a>
+        </button>
+        <button type="submit" class="signupbtn">Đăng kí</button>
+      </div>
+    </div>
+  </form>
+
+</body>
+<script type="module">
+  import Firebase from "../assets/js/firebase.js"
+
+
+  let btn_submit = document.querySelector(".signupbtn");
+  btn_submit.addEventListener("click", (e) => {
+    e.preventDefault();
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#password").value;
+    let fb = new Firebase();
+    fb.signup(email, password)
+  })
+</script>
+
+</html>
